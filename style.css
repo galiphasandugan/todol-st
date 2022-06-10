@@ -2,77 +2,56 @@
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  font-size: 1.2rem;
 }
-body {
-  color: white;
-  height: 100vh;
-}
+
 .container {
   justify-content: center;
   align-items: center;
   display: flex;
-
-  
   
 }
 .header {
-  margin-top: 150px;
-  width: 80vw;
-  height: 50vh;
-  background-color: cornflowerblue;
-  text-align: center;
-  padding-top: 50px;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-   justify-content: start;
-  align-items: center;
-  
  
+  text-align: center;
+  margin-top: 100px;
+}
+h1 {
+  color: red;
+  font-weight: 500;
+  font-size: xx-large;
+  margin-bottom: 30px;
+}
+.main {
+  border: 5px solid blue;
+  width: 30vw;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .input {
-  width: 28vw;
-  height: 2rem;
-  font-size: large;
-  font-weight: 600;
-  padding: 2px;
-  
-}
-.a {
-  width: 33vw;
-  height: 2.5rem;
-  background-color: white;
-  border-radius: 10px;
-  color: black;
-  text-align: center;
-  margin-top: 40px;
-  
-}
-h1{
-  margin-top: 30px;
-}
-ul{
-  color: white;
-  font-size: x-large;
-  text-decoration: none;
-  text-align: left;
-  
-  
+  width: 25vw;
+  height: 3rem;
 }
 .btn {
-  font-size: x-large;
-  width:100px;
-  height: 2rem;
-  border-radius: 20px;
-  border: 2px solid red;
- margin-left: 35vw;
+  width: 5vw;
+  height: 3rem;
 }
-.btn1 {
-  font-size: x-large;
-  width:100px;
-  height: 2rem;
-  border-radius: 20px;
-  border: 2px solid red;
- margin-left: 35vw;
- 
+.main1{
+  height: 3rem;
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+border: 5px solid blue;
+text-align: center;
+
+}
+p{
+   width: 25vw;
+  height: 1.5rem;
+  text-align: left;
+  align-items: center;
+
+  
 }
