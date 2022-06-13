@@ -1,54 +1,74 @@
-const ekle = document.querySelector(".btn");
-const çiz = document.querySelector(".a");
-const sil = document.querySelector(".b");
+const buton = document.querySelector(".buton");
 const input = document.querySelector(".input");
-const div = document.createElement("div");
-const satır = document.querySelector(".main2");
-const main = document.querySelector(".main1");
-const a = document.querySelector("p");
+const ul = document.querySelector("ul");
+
+// ! dikkat et tamam mı ?
+let todos = JSON.parse(localStorage.getItem("todos")) || [];
+console.log('todos');
+renderSavedTodos();
+
+function renderSavedTodos() {
+  todos.forEach((todo) => {
+    createListElement(todo);
+  });
+}
+    
+function createListElement(todo){
+  const {id,content,isDone}=todo;
+  ul.innerHTML +=
+   `<li id=${id} class = ${isDone ? 'checked' : ''}> 
+      <i class="fa-solid fa-check"></i></button>
+      <p>${content}</p>
+      <i class="fa-solid fa-trash"></i></button>
+    </li>`;
+}
+
+window.onload = function () {
+  input.focus();
+};
+input.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    buton.click();
+  }
+});
 
 
-satır.appendChild(div);
 
-// const b = ul.closest(".header").firstElementChild;
-// b.style.width = "";
 
-ekle.onclick = function () {
+
+
+
+
+
+
+// ! capturing method
+
+buton.addEventListener("click", (e) => {
   if (!input.value) {
     alert("Lütfen bir bilgi giriniz");
   } else {
-    div.innerHTML += `<div class="main1">
-          <button class="a"><i class="fa-solid fa-check"></i></button>
-          <p>${input.value}</p>
-          <button class="b"><i class="fa-solid fa-trash"></i></button>
-        </div>`;
-        input.value = "";
-        
-        
-      }
-      // console.log(ul.childElementCount);
+    const liste = {
+      id: new Date().getTime(),
+      İsDone: false,
+      content: input.value,
     };
-    
-    sil.onclick = function () {
-        a.innerHTML =  `remove()`
-    };
-    çiz.onclick = function () {
-        a.style.textDecoration = `line-through`
-  
-    };
-    // çiz.onclick = function () {
-//   ul.style.color = v`red`;
-// };
+    todos.push(liste);
+    localStorage.setItem("todos", JSON.stringify("todos"));
+    createListElement(liste);
+    todoInput.value ='';
+   
+  }
+});
 
-// input.addEventListener("keydown", (e) => {
-//   // console.log(e);
-//   if (e.keyCode === 13) {
-//     buton.onclick();
-//   }
-//   // if (e.code === 'Enter') {
-//   //   ekleBtn.onclick();
-//   // }
-//   if (e.code === "Delete") {
-//     sil.onclick();
-//   }
-// });
+ul.addEventListener("click", (e) => {
+  if (e.target.classList.contains("fa-trash")) {
+    e.target.parentElement.remove();
+  }
+  if (e.target.classList.contains("fa-check")) {
+    if (e.target.parentElement.classList.contains("ekle")) {
+      e.target.parentElement.classList.remove("ekle");
+    } else {
+      e.target.parentElement.classList.add("ekle");
+    }
+  }
+});

@@ -22,36 +22,60 @@ h1 {
   font-size: xx-large;
   margin-bottom: 30px;
 }
+
+
 .main {
-  border: 5px solid blue;
+  border: 3px solid blue;
   width: 30vw;
   height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
+
+
+
+
 .input {
   width: 25vw;
   height: 3rem;
 }
-.btn {
+.buton {
   width: 5vw;
   height: 3rem;
 }
+
 .main1{
-  height: 3rem;
- display: flex;
- justify-content: space-around;
- align-items: center;
-border: 5px solid blue;
-text-align: center;
+  
+  width: 100%;
+  height: ;
+  overflow-x: hidden;
+  overflow-y: auto;
 
 }
-p{
-   width: 25vw;
-  height: 1.5rem;
-  text-align: left;
-  align-items: center;
-
+.ul{
+ 
+  width: 100%;
+  list-style: none;
   
+
+}
+li{
+  border: 1px solid red;
+  width: 95%;
+  height: 3rem;
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+
+}
+li.ekle > .fa-check {
+  color: #00e676;
+}
+
+li.ekle > p {
+  color: rgb(41, 41, 41);
+  text-decoration: line-through;
+  font-weight: normal;
 }
